@@ -1,5 +1,6 @@
 PODS:
   - Bolts/Tasks (1.9.0)
+  - iOSDropDown (0.2.7)
   - Parse (1.17.2):
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
@@ -10,6 +11,7 @@ PODS:
     - PathKit (~> 0.9.0)
 
 DEPENDENCIES:
+  - iOSDropDown
   - Parse
   - Sourcery
   - Stencil (~> 0.13.1)
@@ -17,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Bolts
+    - iOSDropDown
     - Parse
     - PathKit
     - Sourcery
@@ -24,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  iOSDropDown: 7a4cfc67d5166f319858747b63cd2f7760c4fb4b
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
   PathKit: 273f59a38e3218eb95abd9f6a61730a8bcfd2f06
   Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
   Stencil: b5128a0a43ece9225db5cbd94d6569fe6fba609b
 
-PODFILE CHECKSUM: f5d2006c4291b296e1fc1eb6499098d34e8cbd95
+PODFILE CHECKSUM: 8b2920d1ddfe0bd8aaadc7740daaa553a35d3f07
 
 COCOAPODS: 1.5.0

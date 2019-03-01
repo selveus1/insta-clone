@@ -9,5 +9,6 @@ target 'InstaClone' do
   pod 'Parse'
   pod 'Sourcery'
   pod 'Stencil', '~> 0.13.1'
+  pod 'iOSDropDown'
 
 end
