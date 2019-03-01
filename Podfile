@@ -7,5 +7,7 @@ target 'InstaClone' do
 
   # Pods for InstaClone
   pod 'Parse'
+  pod 'Sourcery'
+  pod 'Stencil', '~> 0.13.1'
 
 end

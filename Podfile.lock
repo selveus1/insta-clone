@@ -4,19 +4,31 @@ PODS:
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
     - Bolts/Tasks (~> 1.9)
+  - PathKit (0.9.2)
+  - Sourcery (0.15.0)
+  - Stencil (0.13.1):
+    - PathKit (~> 0.9.0)
 
 DEPENDENCIES:
   - Parse
+  - Sourcery
+  - Stencil (~> 0.13.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Bolts
     - Parse
+    - PathKit
+    - Sourcery
+    - Stencil
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
+  PathKit: 273f59a38e3218eb95abd9f6a61730a8bcfd2f06
+  Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
+  Stencil: b5128a0a43ece9225db5cbd94d6569fe6fba609b
 
-PODFILE CHECKSUM: acc3525322d6308037a06da3361e39e849acb1f1
+PODFILE CHECKSUM: f5d2006c4291b296e1fc1eb6499098d34e8cbd95
 
 COCOAPODS: 1.5.0
