@@ -75,12 +75,15 @@ class LoginSignupViewController: UIViewController {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: usernameTextField.frame.height))
         usernameTextField.leftView = paddingView
         usernameTextField.leftViewMode = UITextField.ViewMode.always
-
+        usernameTextField.layer.cornerRadius = 3
+        
         passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: passwordTextField.frame.height))
         passwordTextField.leftViewMode = UITextField.ViewMode.always
+        passwordTextField.layer.cornerRadius = 3
         
-        loginSignupButton.layer.borderWidth = 0.5
+        loginSignupButton.layer.borderWidth = 1.1
         loginSignupButton.layer.borderColor = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha:0.25).cgColor
+        loginSignupButton.layer.cornerRadius = 3
         
         
         //imbed img into fb label
