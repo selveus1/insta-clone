@@ -14,7 +14,7 @@
 		AC9464D3222877BB0008133E /* ConfigVars.stencil in Sources */ = {isa = PBXBuildFile; fileRef = AC9464D2222877BB0008133E /* ConfigVars.stencil */; };
 		ACD7B59C22288086009D1829 /* ConfigVars.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD7B59B22288086009D1829 /* ConfigVars.generated.swift */; };
 		ACE0B17D2227588E007CFAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17C2227588E007CFAC6 /* AppDelegate.swift */; };
-		ACE0B17F2227588E007CFAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17E2227588E007CFAC6 /* ViewController.swift */; };
+		ACE0B17F2227588E007CFAC6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */; };
 		ACE0B1822227588E007CFAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE0B1802227588E007CFAC6 /* Main.storyboard */; };
 		ACE0B1852227588E007CFAC6 /* InstaClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B1832227588E007CFAC6 /* InstaClone.xcdatamodeld */; };
 		ACE0B1872227588F007CFAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE0B1862227588F007CFAC6 /* Assets.xcassets */; };
@@ -31,7 +31,7 @@
 		ACD7B59B22288086009D1829 /* ConfigVars.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigVars.generated.swift; sourceTree = "<group>"; };
 		ACE0B1792227588E007CFAC6 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE0B17C2227588E007CFAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACE0B17E2227588E007CFAC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		ACE0B1812227588E007CFAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACE0B1842227588E007CFAC6 /* InstaClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaClone.xcdatamodel; sourceTree = "<group>"; };
 		ACE0B1862227588F007CFAC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		ACD7B59D222881F6009D1829 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ACE0B17E2227588E007CFAC6 /* ViewController.swift */,
 				AC5B60642228D4B300C2AFD5 /* LoginViewController.swift */,
+				ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 				AC5B60692228E8F500C2AFD5 /* GradientLayerView.swift in Sources */,
 				ACE0B1852227588E007CFAC6 /* InstaClone.xcdatamodeld in Sources */,
 				AC9464D3222877BB0008133E /* ConfigVars.stencil in Sources */,
-				ACE0B17F2227588E007CFAC6 /* ViewController.swift in Sources */,
+				ACE0B17F2227588E007CFAC6 /* SignupViewController.swift in Sources */,
 				AC5B60672228D7D400C2AFD5 /* Constants.swift in Sources */,
 				AC5B60652228D4B300C2AFD5 /* LoginViewController.swift in Sources */,
 				ACE0B17D2227588E007CFAC6 /* AppDelegate.swift in Sources */,
