@@ -22,5 +22,15 @@ struct Constants {
     static let ORANGE = UIColor(red: 247.0/255, green: 119.0/255, blue: 55.0/255, alpha: 1.0)
     static let YELLOWORANGE = UIColor(red: 252.0/255, green: 175.0/255, blue: 69.0/255, alpha: 1.0)
     static let YELLOW = UIColor(red: 255.0/255, green: 220.0/255, blue: 128.0/255, alpha: 1.0)
+    
+    static var OPAQUE = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha:0.25)
+    static var LIGHT_OPAQUE = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha:0.25)
+    
+    // MARK: - Structural
+    static var BORDER_RAD: CGFloat = 3.0
+    static var BORDER_WID: CGFloat = 1.1
+    static var FIELD_HEIGHT: CGFloat = 40.0
+//    static var FIELD_PADDING: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: FIELD_HEIGHT))
+    
 }
 

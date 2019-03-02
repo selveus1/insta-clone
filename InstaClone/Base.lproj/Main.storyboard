@@ -16,20 +16,34 @@
                         <viewControllerLayoutGuide type="top" id="UHD-lh-kNs"/>
                         <viewControllerLayoutGuide type="bottom" id="31L-d4-1Xs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientLayerView" customModule="InstaClone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor1">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor2">
+                                <color key="value" red="0.48627450979999998" green="0.70196078429999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="gradientStartPoint">
+                                <point key="value" x="0.0" y="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="gradientEndPoint">
+                                <point key="value" x="1" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="567" y="114"/>
         </scene>
-        <!--Login Signup View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="psr-I8-pI3">
             <objects>
-                <viewController id="gaA-Qv-ZgA" customClass="LoginSignupViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gaA-Qv-ZgA" customClass="LoginViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PTM-Ui-oQh"/>
                         <viewControllerLayoutGuide type="bottom" id="TCL-1I-hbY"/>
@@ -97,12 +111,13 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvD-b6-cny">
                                         <rect key="frame" x="0.0" y="91" width="302.66666666666669" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="aCb-v7-ihq"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="0.25074290644171782" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKz-nt-noe" userLabel="Login Btn Help Sep">
@@ -176,12 +191,13 @@
                                 </attributedString>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-Zk-WPB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-Zk-WPB">
                                 <rect key="frame" x="0.0" y="817" width="414" height="45"/>
-                                <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="0.24583013803680981" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0YE-lr-I7L"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Don't have an account? Sign Up.">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -206,6 +222,8 @@
                             <constraint firstAttribute="trailing" secondItem="PUr-UQ-btg" secondAttribute="trailing" constant="35" id="Bil-Wq-y4B"/>
                             <constraint firstItem="Uk9-Jk-Zcg" firstAttribute="centerX" secondItem="8WZ-nx-WH7" secondAttribute="centerX" id="Ddm-CG-eSo"/>
                             <constraint firstItem="dYg-ea-lbU" firstAttribute="centerX" secondItem="8WZ-nx-WH7" secondAttribute="centerX" id="JUd-X3-fPw"/>
+                            <constraint firstItem="whm-aA-RBQ" firstAttribute="top" secondItem="PTM-Ui-oQh" secondAttribute="bottom" constant="40" id="LkN-aC-g3V"/>
+                            <constraint firstItem="TCL-1I-hbY" firstAttribute="top" secondItem="Y1u-Zk-WPB" secondAttribute="bottom" id="OYT-Rq-eRi"/>
                             <constraint firstItem="PUr-UQ-btg" firstAttribute="leading" secondItem="13y-aS-iBR" secondAttribute="trailing" constant="5" id="Q9d-d3-Re4"/>
                             <constraint firstItem="dYg-ea-lbU" firstAttribute="top" secondItem="13y-aS-iBR" secondAttribute="bottom" constant="8" symbolic="YES" id="QKP-jk-SJy"/>
                             <constraint firstItem="Y1u-Zk-WPB" firstAttribute="leading" secondItem="8WZ-nx-WH7" secondAttribute="leading" id="TQ4-WU-hD5"/>
@@ -214,8 +232,6 @@
                             <constraint firstItem="rTc-et-QbJ" firstAttribute="centerY" secondItem="13y-aS-iBR" secondAttribute="centerY" id="ZKV-vO-tA2"/>
                             <constraint firstItem="Uk9-Jk-Zcg" firstAttribute="top" secondItem="AXl-92-Z4i" secondAttribute="bottom" constant="8" id="cK7-lw-rXs"/>
                             <constraint firstItem="PUr-UQ-btg" firstAttribute="centerY" secondItem="13y-aS-iBR" secondAttribute="centerY" id="ghw-rT-FZ6"/>
-                            <constraint firstItem="TCL-1I-hbY" firstAttribute="top" secondItem="Y1u-Zk-WPB" secondAttribute="bottom" id="hZX-Us-ZNW"/>
-                            <constraint firstItem="whm-aA-RBQ" firstAttribute="top" secondItem="PTM-Ui-oQh" secondAttribute="bottom" constant="40" id="iOn-qj-C41"/>
                             <constraint firstItem="13y-aS-iBR" firstAttribute="leading" secondItem="rTc-et-QbJ" secondAttribute="trailing" constant="5" id="iQ5-fo-5bq"/>
                             <constraint firstAttribute="trailing" secondItem="Uk9-Jk-Zcg" secondAttribute="trailing" constant="55.666666666666629" id="jKU-4A-7YG"/>
                             <constraint firstItem="13y-aS-iBR" firstAttribute="centerX" secondItem="8WZ-nx-WH7" secondAttribute="centerX" id="mD1-Y9-YEK"/>
@@ -225,16 +241,19 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="gradientColor1">
-                                <color key="value" red="0.51372549020000002" green="0.2274509804" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.51372549019607838" green="0.22745098039215686" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="gradientColor2">
                                 <color key="value" red="0.75686274509999996" green="0.20784313730000001" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="point" keyPath="gradientStartPoint">
-                                <point key="value" x="0.0" y="1"/>
+                                <point key="value" x="0.0" y="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="point" keyPath="gradientEndPoint">
-                                <point key="value" x="1" y="0.0"/>
+                                <point key="value" x="1" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor3">
+                                <color key="value" red="0.88235294117647056" green="0.18823529411764706" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>

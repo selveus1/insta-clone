@@ -23,6 +23,7 @@ class GradientLayerView: UIView {
             self.setGradient()
         }
     }
+
     
     @IBInspectable var gradientStartPoint: CGPoint = CGPoint(x: 0, y: 0) {
         didSet{
