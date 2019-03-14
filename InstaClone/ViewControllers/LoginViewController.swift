@@ -8,17 +8,17 @@
 
 import UIKit
 import iOSDropDown
+import Parse
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var languageDropDown: DropDown!
+    let customizationService = CustomizationService()
     
+    @IBOutlet var languageDropDown: DropDown!
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    
-    @IBOutlet var loginSignupButton: UIButton!
+    @IBOutlet var loginButton: UIButton!
     @IBOutlet var getHelpLabel: UILabel!
-    
     @IBOutlet var loginWithFBLabel: UILabel!
     @IBOutlet var switchPerspectiveButton: UIButton!
     
@@ -26,8 +26,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupLoginScreen()
+        
+        //check for existing user credentials
         
     }
     
@@ -35,12 +36,12 @@ class LoginViewController: UIViewController {
     // MARK: - Structural
     func setupLoginScreen() {
         createLangDropDown()
-        customizeTextField(textField: usernameTextField)
-        customizePlaceholderText(textField: usernameTextField, placeholderText: "Username")
-        customizeTextField(textField: passwordTextField)
-        customizePlaceholderText(textField: passwordTextField, placeholderText: "Password")
-        customizeButtons()
-        customizeFacebookLabel()
+        customizationService.customizeTextField(textField: usernameTextField)
+        customizationService.customizePlaceholderText(textField: usernameTextField, placeholderText: "Username")
+        customizationService.customizeTextField(textField: passwordTextField)
+        customizationService.customizePlaceholderText(textField: passwordTextField, placeholderText: "Password")
+        customizationService.customizeButtons(button: loginButton)
+        customizationService.customizeFacebookLabel(label: loginWithFBLabel )
 
     }
     
@@ -67,51 +68,28 @@ class LoginViewController: UIViewController {
         languageDropDown.layer.borderColor = UIColor.clear.cgColor
 
     }
+ 
     
     
-    // adds color and padding to text fields
-    func customizeTextField(textField: UITextField) {
-        textField.backgroundColor = Constants.OPAQUE
-        textField.textColor = .white
-        
-        //pad text
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: Constants.FIELD_HEIGHT))
-        textField.leftView = paddingView
-        textField.leftViewMode = UITextField.ViewMode.always
-        textField.layer.cornerRadius = Constants.BORDER_RAD
-        
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        if usernameTextField.text == "" || passwordTextField.text == "" {
+            AlertService.showAlertWithOkay(alertTitle: "Incomplete Fields", alertMsg: "Please make sure all fields are entered!")
+        } else {
+            PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!, block:{ (user, error) in
+                
+                //logged in
+                if user != nil {
+                    print("Log in successful")
+                    //self.performSegue(withIdentifier: "showUserTable", sender: self)
+                } else{
+                    var errorText = "Unknown error. Please try again."
+                    if let error = error {
+                        errorText = error.localizedDescription
+                    }
+                    AlertService.showAlertWithOkay(alertTitle: "Could Not Log You In", alertMsg: errorText)
+                }
+            })
+        }
     }
     
-
-    
-    func customizePlaceholderText(textField: UITextField, placeholderText: String) {
-        var fieldTextTitle = NSMutableAttributedString()
-        fieldTextTitle = NSMutableAttributedString(string: placeholderText, attributes: nil)
-        fieldTextTitle.addAttribute(NSAttributedString.Key.foregroundColor,
-                                         value: UIColor.white, range:NSRange(location: 0, length: placeholderText.count))
-        textField.attributedPlaceholder = fieldTextTitle
-    }
-    
-    
-    func customizeButtons(){
-        loginSignupButton.layer.borderWidth = Constants.BORDER_WID
-        loginSignupButton.layer.borderColor = Constants.LIGHT_OPAQUE.cgColor
-        loginSignupButton.layer.cornerRadius = Constants.BORDER_RAD
-    }
-    
-    
-    // adds a small FB logo next to login with facebook text
-    func customizeFacebookLabel(){
-        
-        let fbLogo: UIImage = UIImage(named: "FacebookLogoWhite")!
-        var bgImg: UIImageView?
-        bgImg = UIImageView(image: fbLogo)
-        bgImg!.frame = CGRect(x: 0, y: 0, width: loginWithFBLabel.frame.height, height: loginWithFBLabel.frame.height)
-
-        loginWithFBLabel.addSubview(bgImg!)
-        loginWithFBLabel.textColor = .white
-    }
-    
-    
-
 }
