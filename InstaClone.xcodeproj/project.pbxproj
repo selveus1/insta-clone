@@ -9,14 +9,24 @@
 /* Begin PBXBuildFile section */
 		ABC621928A4B4A20A21E5A0E /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63CC9A279C890B02509393B /* Pods_InstaClone.framework */; };
 		AC47788D2232FD44002E1FCB /* CustomizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47788C2232FD44002E1FCB /* CustomizationService.swift */; };
-		AC5B60652228D4B300C2AFD5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B60642228D4B300C2AFD5 /* LoginViewController.swift */; };
+		AC5B60652228D4B300C2AFD5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B60642228D4B300C2AFD5 /* LoginVC.swift */; };
 		AC5B60672228D7D400C2AFD5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B60662228D7D400C2AFD5 /* Constants.swift */; };
 		AC5B60692228E8F500C2AFD5 /* GradientLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B60682228E8F500C2AFD5 /* GradientLayerView.swift */; };
 		AC8FBCF7223B0428008345F8 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBCF6223B0428008345F8 /* AlertService.swift */; };
 		AC8FBCF9223B0811008345F8 /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBCF8223B0811008345F8 /* ValidatorService.swift */; };
 		AC8FBCFC223B0E12008345F8 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBCFB223B0E12008345F8 /* UITextFieldExtensions.swift */; };
 		AC9464D3222877BB0008133E /* ConfigVars.stencil in Sources */ = {isa = PBXBuildFile; fileRef = AC9464D2222877BB0008133E /* ConfigVars.stencil */; };
+		AC94F5DD224ED96D00ED3DF9 /* CreatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94F5DC224ED96D00ED3DF9 /* CreatePasswordVC.swift */; };
+		AC94F5DF224EDB9900ED3DF9 /* UsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94F5DE224EDB9900ED3DF9 /* UsernameVC.swift */; };
+		AC94F5E2224EE29900ED3DF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94F5E1224EE29900ED3DF9 /* User.swift */; };
+		AC94F5E4224EE2A200ED3DF9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94F5E3224EE2A200ED3DF9 /* Account.swift */; };
+		AC94F5E6224EE31E00ED3DF9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94F5E5224EE31E00ED3DF9 /* Post.swift */; };
 		ACD7B59C22288086009D1829 /* ConfigVars.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD7B59B22288086009D1829 /* ConfigVars.generated.swift */; };
+		ACDD54D2224D618C00075D12 /* SignupStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D1224D618C00075D12 /* SignupStartVC.swift */; };
+		ACDD54D4224D622500075D12 /* PhoneEmailSignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D3224D622500075D12 /* PhoneEmailSignupVC.swift */; };
+		ACDD54D6224D631F00075D12 /* FullNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D5224D631F00075D12 /* FullNameVC.swift */; };
+		ACDD54D8224D638900075D12 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D7224D638900075D12 /* WelcomeVC.swift */; };
+		ACDD54DA224D63F000075D12 /* InitProfileConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D9224D63F000075D12 /* InitProfileConfigVC.swift */; };
 		ACE0B17D2227588E007CFAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17C2227588E007CFAC6 /* AppDelegate.swift */; };
 		ACE0B17F2227588E007CFAC6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */; };
 		ACE0B1822227588E007CFAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE0B1802227588E007CFAC6 /* Main.storyboard */; };
@@ -29,14 +39,24 @@
 		4930BCF2C3CC31A2DC891620 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		835117D02D15B1D27232E1D1 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 		AC47788C2232FD44002E1FCB /* CustomizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationService.swift; sourceTree = "<group>"; };
-		AC5B60642228D4B300C2AFD5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AC5B60642228D4B300C2AFD5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AC5B60662228D7D400C2AFD5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC5B60682228E8F500C2AFD5 /* GradientLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerView.swift; sourceTree = "<group>"; };
 		AC8FBCF6223B0428008345F8 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		AC8FBCF8223B0811008345F8 /* ValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		AC8FBCFB223B0E12008345F8 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		AC9464D2222877BB0008133E /* ConfigVars.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConfigVars.stencil; sourceTree = "<group>"; };
+		AC94F5DC224ED96D00ED3DF9 /* CreatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordVC.swift; sourceTree = "<group>"; };
+		AC94F5DE224EDB9900ED3DF9 /* UsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameVC.swift; sourceTree = "<group>"; };
+		AC94F5E1224EE29900ED3DF9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AC94F5E3224EE2A200ED3DF9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		AC94F5E5224EE31E00ED3DF9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		ACD7B59B22288086009D1829 /* ConfigVars.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigVars.generated.swift; sourceTree = "<group>"; };
+		ACDD54D1224D618C00075D12 /* SignupStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStartVC.swift; sourceTree = "<group>"; };
+		ACDD54D3224D622500075D12 /* PhoneEmailSignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEmailSignupVC.swift; sourceTree = "<group>"; };
+		ACDD54D5224D631F00075D12 /* FullNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameVC.swift; sourceTree = "<group>"; };
+		ACDD54D7224D638900075D12 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		ACDD54D9224D63F000075D12 /* InitProfileConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitProfileConfigVC.swift; sourceTree = "<group>"; };
 		ACE0B1792227588E007CFAC6 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE0B17C2227588E007CFAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -80,8 +100,8 @@
 		AC47788B2232FD15002E1FCB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AC47788C2232FD44002E1FCB /* CustomizationService.swift */,
 				AC8FBCF6223B0428008345F8 /* AlertService.swift */,
+				AC47788C2232FD44002E1FCB /* CustomizationService.swift */,
 				AC8FBCF8223B0811008345F8 /* ValidatorService.swift */,
 			);
 			path = Services;
@@ -111,6 +131,16 @@
 			path = Autogenerated;
 			sourceTree = "<group>";
 		};
+		AC94F5E0224EE28400ED3DF9 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC94F5E1224EE29900ED3DF9 /* User.swift */,
+				AC94F5E3224EE2A200ED3DF9 /* Account.swift */,
+				AC94F5E5224EE31E00ED3DF9 /* Post.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
 		ACC2E23C222875F100B44E38 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +152,15 @@
 		ACD7B59D222881F6009D1829 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AC5B60642228D4B300C2AFD5 /* LoginViewController.swift */,
 				ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */,
+				AC5B60642228D4B300C2AFD5 /* LoginVC.swift */,
+				ACDD54D1224D618C00075D12 /* SignupStartVC.swift */,
+				ACDD54D3224D622500075D12 /* PhoneEmailSignupVC.swift */,
+				AC94F5DE224EDB9900ED3DF9 /* UsernameVC.swift */,
+				ACDD54D5224D631F00075D12 /* FullNameVC.swift */,
+				AC94F5DC224ED96D00ED3DF9 /* CreatePasswordVC.swift */,
+				ACDD54D7224D638900075D12 /* WelcomeVC.swift */,
+				ACDD54D9224D63F000075D12 /* InitProfileConfigVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,6 +186,7 @@
 		ACE0B17B2227588E007CFAC6 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				AC94F5E0224EE28400ED3DF9 /* Data Models */,
 				AC9464D522287AF70008133E /* Autogenerated */,
 				ACC2E23C222875F100B44E38 /* Templates */,
 				AC5B606A2228EAEA00C2AFD5 /* Custom UI Elements */,
@@ -287,17 +325,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACD7B59C22288086009D1829 /* ConfigVars.generated.swift in Sources */,
+				AC94F5E6224EE31E00ED3DF9 /* Post.swift in Sources */,
 				AC8FBCF9223B0811008345F8 /* ValidatorService.swift in Sources */,
 				AC47788D2232FD44002E1FCB /* CustomizationService.swift in Sources */,
+				ACDD54D6224D631F00075D12 /* FullNameVC.swift in Sources */,
 				AC5B60692228E8F500C2AFD5 /* GradientLayerView.swift in Sources */,
+				AC94F5DD224ED96D00ED3DF9 /* CreatePasswordVC.swift in Sources */,
+				AC94F5DF224EDB9900ED3DF9 /* UsernameVC.swift in Sources */,
 				ACE0B1852227588E007CFAC6 /* InstaClone.xcdatamodeld in Sources */,
+				AC94F5E2224EE29900ED3DF9 /* User.swift in Sources */,
 				AC9464D3222877BB0008133E /* ConfigVars.stencil in Sources */,
+				ACDD54D8224D638900075D12 /* WelcomeVC.swift in Sources */,
 				ACE0B17F2227588E007CFAC6 /* SignupViewController.swift in Sources */,
+				ACDD54D4224D622500075D12 /* PhoneEmailSignupVC.swift in Sources */,
 				AC5B60672228D7D400C2AFD5 /* Constants.swift in Sources */,
-				AC5B60652228D4B300C2AFD5 /* LoginViewController.swift in Sources */,
+				AC5B60652228D4B300C2AFD5 /* LoginVC.swift in Sources */,
+				ACDD54DA224D63F000075D12 /* InitProfileConfigVC.swift in Sources */,
 				AC8FBCFC223B0E12008345F8 /* UITextFieldExtensions.swift in Sources */,
 				AC8FBCF7223B0428008345F8 /* AlertService.swift in Sources */,
+				ACDD54D2224D618C00075D12 /* SignupStartVC.swift in Sources */,
 				ACE0B17D2227588E007CFAC6 /* AppDelegate.swift in Sources */,
+				AC94F5E4224EE2A200ED3DF9 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

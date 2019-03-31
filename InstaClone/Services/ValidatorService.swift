@@ -27,7 +27,6 @@ enum ValidatorType {
     case password
     case username
     case phoneNumber
-    case emailPhone
 }
 
 
@@ -38,7 +37,6 @@ enum ValidatorFactory {
         case .password: return PasswordValidator()
         case .username: return  UsernameValidator()
         case .phoneNumber: return PhoneNumberValidator()
-        case .emailPhone: return EmailPhoneValidator()
         }
     }
 }
@@ -96,7 +94,8 @@ struct UsernameValidator: ValidatorConvertible {
 struct PhoneNumberValidator: ValidatorConvertible {
     func validated(_ value: String) throws -> String {
         do {
-            if try NSRegularExpression(pattern: "^\\d{3}-\\d{3}-\\d{4}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+            //"^\\d{3}-\\d{3}-\\d{4}$"
+            if try NSRegularExpression(pattern: "^\\d{10}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
                 throw ValidationError("Invalid Phone Number")
             }
         } catch {
@@ -106,19 +105,19 @@ struct PhoneNumberValidator: ValidatorConvertible {
     }
 }
 
-struct EmailPhoneValidator:ValidatorConvertible {
-    func validated(_ value: String) throws -> String {
-        do {
-            if try NSRegularExpression(pattern: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
-                print("Not an email... Maybe a phone number...")
-                
-            } else if try NSRegularExpression(pattern: "^\\d{3}-\\d{3}-\\d{4}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
-                print("Not an phone number!! Throwing an error")
-                throw ValidationError("Invalid Email / Phone Number")
-            }
-        } catch {
-            throw ValidationError("Invalid email / phone Number")
-        }
-        return value
-    }
-}
+//struct EmailPhoneValidator:ValidatorConvertible {
+//    func validated(_ value: String) throws -> String {
+//        do {
+//            if try NSRegularExpression(pattern: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+//                print("Not an email... Maybe a phone number...")
+//                
+//            } else if try NSRegularExpression(pattern: "^\\d{3}-\\d{3}-\\d{4}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+//                print("Not an phone number!! Throwing an error")
+//                throw ValidationError("Invalid Email / Phone Number")
+//            }
+//        } catch {
+//            throw ValidationError("Invalid email / phone Number")
+//        }
+//        return value
+//    }
+//}

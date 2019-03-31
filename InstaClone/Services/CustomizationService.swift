@@ -13,10 +13,54 @@ import iOSDropDown
 class CustomizationService {
     
     
+    // MARK : - General
+    static func roundButtonCorners(button: UIButton){
+        button.layer.cornerRadius = Constants.BORDER_RAD
+    }
+    
+    static func customizeSegmentControl(segmentedControl: UISegmentedControl, buttonBar: UIView) {
+        
+        // This needs to be false since we are using auto layout constraints
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Add lines below selectedSegmentIndex
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.tintColor = .clear
+        
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray
+            ], for: .normal)
+        
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor.black
+            ], for: .selected)
+        
+        // TODO - fix slider
+        
+        //Create the button bar that appears under the seg control to highlight selection
+        // This needs to be false since we are using auto layout constraints
+//        buttonBar.translatesAutoresizingMaskIntoConstraints = false
+//        buttonBar.backgroundColor = UIColor.black
+//
+//        // Constrain the top of the button bar to the bottom of the segmented control
+//        buttonBar.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor).isActive = true
+//        buttonBar.heightAnchor.constraint(equalToConstant: 3).isActive = true
+//
+//        // Constrain the button bar to the left side of the segmented control
+//        buttonBar.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor).isActive = true
+//
+//        // Constrain the button bar to the width of the segmented control divided by the number of segments
+//        buttonBar.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multiplier: 1 / CGFloat(segmentedControl.numberOfSegments)).isActive = true
+    }
     
     
     
-    func customizeTextField(textField: UITextField) {
+    
+    // MARK : - Login Screen
+    
+    static func customizeTextField(textField: UITextField) {
         textField.backgroundColor = Constants.OPAQUE
         textField.textColor = .white
         
@@ -30,7 +74,7 @@ class CustomizationService {
     
     
     
-    func customizePlaceholderText(textField: UITextField, placeholderText: String) {
+    static func customizePlaceholderText(textField: UITextField, placeholderText: String) {
         var fieldTextTitle = NSMutableAttributedString()
         fieldTextTitle = NSMutableAttributedString(string: placeholderText, attributes: nil)
         fieldTextTitle.addAttribute(NSAttributedString.Key.foregroundColor,
@@ -39,7 +83,7 @@ class CustomizationService {
     }
     
     
-    func customizeButtons(button: UIButton){
+    static func customizeButtons(button: UIButton){
         button.layer.borderWidth = Constants.BORDER_WID
         button.layer.borderColor = Constants.LIGHT_OPAQUE.cgColor
         button.layer.cornerRadius = Constants.BORDER_RAD
@@ -47,14 +91,13 @@ class CustomizationService {
     
     
     // adds a small FB logo next to login with facebook text
-    func customizeFacebookLabel(label: UILabel){
+    static func customizeFacebookLabel(label: UILabel){
 
         let fbLogo: UIImage = UIImage(named: "FacebookLogoWhite")!
-        var bgImg: UIImageView?
-        bgImg = UIImageView(image: fbLogo)
-        bgImg!.frame = CGRect(x: 0, y: 0, width: label.frame.height, height: label.frame.height)
+        var bgImg = UIImageView(image: fbLogo)
+        bgImg.frame = CGRect(x: 0, y: 0, width: label.frame.height, height: label.frame.height)
 
-        label.addSubview(bgImg!)
+        label.addSubview(bgImg)
         label.textColor = .white
     }
     

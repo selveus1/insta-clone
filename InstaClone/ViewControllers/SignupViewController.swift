@@ -31,18 +31,18 @@ class SignupViewController: UIViewController {
     
     func setupSignUpScreen(){
 
-        customizationService.customizeTextField(textField: mobileEmailField)
-        customizationService.customizeTextField(textField: fullNameField)
-        customizationService.customizeTextField(textField: usernameField)
-        customizationService.customizeTextField(textField: passwordField)
-
-        customizationService.customizePlaceholderText(textField: mobileEmailField, placeholderText: "Mobile Number or Email")
-        customizationService.customizePlaceholderText(textField: fullNameField, placeholderText: "Full Name")
-        customizationService.customizePlaceholderText(textField: usernameField, placeholderText: "Username")
-        customizationService.customizePlaceholderText(textField: passwordField, placeholderText: "Password")
-
-        customizationService.customizeButtons(button: signupButton)
-        customizationService.customizeFacebookLabel(label: signUpWithFBLabel)
+//        customizationService.customizeTextField(textField: mobileEmailField)
+//        customizationService.customizeTextField(textField: fullNameField)
+//        customizationService.customizeTextField(textField: usernameField)
+//        customizationService.customizeTextField(textField: passwordField)
+//
+//        customizationService.customizePlaceholderText(textField: mobileEmailField, placeholderText: "Mobile Number or Email")
+//        customizationService.customizePlaceholderText(textField: fullNameField, placeholderText: "Full Name")
+//        customizationService.customizePlaceholderText(textField: usernameField, placeholderText: "Username")
+//        customizationService.customizePlaceholderText(textField: passwordField, placeholderText: "Password")
+//
+//        customizationService.customizeButtons(button: signupButton)
+//        customizationService.customizeFacebookLabel(label: signUpWithFBLabel)
     }
     
     
@@ -88,7 +88,7 @@ class SignupViewController: UIViewController {
             
             do {
 
-                let emailPhone = try mobileEmailField.validatedText(validationType: ValidatorType.emailPhone)
+                let emailPhone = try mobileEmailField.validatedText(validationType: ValidatorType.email)
                 let username = try usernameField.validatedText(validationType: ValidatorType.username)
                 let password = try passwordField.validatedText(validationType: ValidatorType.password)
                 

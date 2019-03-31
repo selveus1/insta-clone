@@ -10,10 +10,8 @@ import UIKit
 import iOSDropDown
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
 
-    let customizationService = CustomizationService()
-    
     @IBOutlet var languageDropDown: DropDown!
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -36,12 +34,12 @@ class LoginViewController: UIViewController {
     // MARK: - Structural
     func setupLoginScreen() {
         createLangDropDown()
-        customizationService.customizeTextField(textField: usernameTextField)
-        customizationService.customizePlaceholderText(textField: usernameTextField, placeholderText: "Username")
-        customizationService.customizeTextField(textField: passwordTextField)
-        customizationService.customizePlaceholderText(textField: passwordTextField, placeholderText: "Password")
-        customizationService.customizeButtons(button: loginButton)
-        customizationService.customizeFacebookLabel(label: loginWithFBLabel )
+        CustomizationService.customizeTextField(textField: usernameTextField)
+        CustomizationService.customizePlaceholderText(textField: usernameTextField, placeholderText: "Username")
+        CustomizationService.customizeTextField(textField: passwordTextField)
+        CustomizationService.customizePlaceholderText(textField: passwordTextField, placeholderText: "Password")
+        CustomizationService.customizeButtons(button: loginButton)
+        CustomizationService.customizeFacebookLabel(label: loginWithFBLabel )
 
     }
     
