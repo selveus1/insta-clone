@@ -86,44 +86,41 @@ class SignupViewController: UIViewController {
             AlertService.showAlertWithOkay(alertTitle: "Incomplete Fields", alertMsg: "Please make sure all fields are entered!")
         } else {
             
-            do {
+            
 
-                let emailPhone = try mobileEmailField.validatedText(validationType: ValidatorType.email)
-                let username = try usernameField.validatedText(validationType: ValidatorType.username)
-                let password = try passwordField.validatedText(validationType: ValidatorType.password)
+//                let emailPhone = try mobileEmailField.validatedText(validationType: ValidatorType.email)
+//                let username = try usernameField.validatedText(validationType: ValidatorType.username)
+//                let password = try passwordField.validatedText(validationType: ValidatorType.password)
+            
+            print("Validated fields!")
+            
+            let user = PFUser()
+            user.username = usernameField.text
+            
+            if (mobileEmailField.text?.contains("@"))! {
+                user.email = mobileEmailField.text
+            } else {
+                user["phoneNumber"] = mobileEmailField.text
+            }
+            
+            user.password = passwordField.text
+            
+            user.signUpInBackground(block: { (success, error) in
                 
-                print("Validated fields!")
+                //stop pausing the app
+                self.activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
                 
-                let user = PFUser()
-                user.username = usernameField.text
-                
-                if (mobileEmailField.text?.contains("@"))! {
-                    user.email = mobileEmailField.text
+                if let error = error {
+                    print(error)
+                    AlertService.showAlertWithOkay(alertTitle: "Could Not Sign You Up", alertMsg: error.localizedDescription)
                 } else {
-                    user["phoneNumber"] = mobileEmailField.text
+                    print("signed up")
+                    //self.performSegue(withIdentifier: "showUserTable", sender: self)
                 }
                 
-                user.password = passwordField.text
-                
-                user.signUpInBackground(block: { (success, error) in
-                    
-                    //stop pausing the app
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.shared.endIgnoringInteractionEvents()
-                    
-                    if let error = error {
-                        print(error)
-                        AlertService.showAlertWithOkay(alertTitle: "Could Not Sign You Up", alertMsg: error.localizedDescription)
-                    } else {
-                        print("signed up")
-                        //self.performSegue(withIdentifier: "showUserTable", sender: self)
-                    }
-                    
-                })
-                
-            } catch(let error) {
-                AlertService.showAlertWithOkay(alertTitle: "Error", alertMsg: "Make sure inputs are valid!")
-            }
+            })
+            
             
             
         }

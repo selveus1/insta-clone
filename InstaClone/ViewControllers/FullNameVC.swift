@@ -10,8 +10,10 @@ import UIKit
 
 class FullNameVC: UIViewController {
 
+
+    var signupInfo: [String:String] = [:]
+    @IBOutlet var fullNameTextField: UITextField!
     
-    var signupInfo: [String:Any] = [:]
     
     
     override func viewDidLoad() {
@@ -26,15 +28,29 @@ class FullNameVC: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        if(validateInput()) { //incorrect input of some kind
+            
+            self.signupInfo[Constants.FULL_NAME] = self.fullNameTextField.text
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let passwordVC = storyBoard.instantiateViewController(withIdentifier: "CreatePasswordVC") as! CreatePasswordVC
+            passwordVC.signupInfo = signupInfo
+            self.present(passwordVC, animated:true, completion:nil)
+            
+        }
+        
     }
-    */
-
+    
+    
+    func validateInput() -> Bool {
+        //check if text field is empty
+        if fullNameTextField.text == "" {
+            AlertService.showAlertWithOkay(alertTitle: "Name Field Empty", alertMsg: "Please enter a name!")
+            return false
+        }
+        
+        return true
+    }
+    
 }

@@ -32,5 +32,15 @@ struct Constants {
     static var FIELD_HEIGHT: CGFloat = 40.0
 //    static var FIELD_PADDING: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: FIELD_HEIGHT))
     
+    
+    // MARK: - Common Fields
+    static let USERNAME = "username"
+    static let PASSWORD = "password"
+    static let EMAIL = "email"
+    static let PHONE_NUMBER = "phoneNumber"
+    static let FULL_NAME = "fullName"
+    
+    
+    
 }
 

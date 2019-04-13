@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class PhoneEmailSignupVC: UIViewController {
 
-    var signupInfo: [String:Any] = [:]
+    var signupInfo: [String:String] = [:]
     
     @IBOutlet var phoneEmailSegCtrl: UISegmentedControl!
     @IBOutlet var phoneEmailTextField: UITextField!
@@ -26,8 +27,7 @@ class PhoneEmailSignupVC: UIViewController {
         // change segment control to bar theme
         self.view.addSubview(buttonBar)
         CustomizationService.customizeSegmentControl(segmentedControl: phoneEmailSegCtrl, buttonBar: buttonBar)
-        
-    
+
     }
     
     @IBAction func phoneEmailSegCtrlChanged(_ sender: Any) {
@@ -60,31 +60,56 @@ class PhoneEmailSignupVC: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         
-        if(!validateInput()) { //incorrect input of some kind
+        
+        
+        
+        if !validateInput() { //incorrect input of some kind
             AlertService.showAlertWithOkay(alertTitle: "Incorrect Phone / Email", alertMsg: "Please check to make sure input is valid.")
         } else {
             
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            
-            // add input for signup infor dict
-            if(phoneEmailSegCtrl.selectedSegmentIndex == 0) { //user is entering phone number
-                signupInfo["phoneNum"] = phoneEmailTextField.text
-                
-                // if user choose phone, send to username VC
-                let usernameVC = storyBoard.instantiateViewController(withIdentifier: "UsernameVC") as! UsernameVC
-                usernameVC.signupInfo = signupInfo
-                self.present(usernameVC, animated:true, completion:nil)
-                
-            } else if(phoneEmailSegCtrl.selectedSegmentIndex == 1) { //user is entering
-                signupInfo["email"] = phoneEmailTextField.text
-                
-                // if user chooses email, send to add name VC
-                let fullNameVC = storyBoard.instantiateViewController(withIdentifier: "FullNameVC") as! FullNameVC
-                fullNameVC.signupInfo = signupInfo
-                self.present(fullNameVC, animated:true, completion:nil)
+            // check for username availibility
+            var isPhone = true
+            var errorTitle = ""
+            if phoneEmailSegCtrl.selectedSegmentIndex == 0 {
+                isPhone = true
+                errorTitle = "Phone Number"
+            } else {
+                isPhone = false
+                errorTitle = "Email"
             }
-
+            
+            if !UserService.checkPhoneEmailAvailability(isPhone: isPhone, inputText: phoneEmailTextField.text!) {
+                
+                AlertService.showAlertWithOkay(alertTitle: errorTitle + " Already In Use", alertMsg: errorTitle + " is already assigned to an account.")
+            }
+            else {
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                
+                // add input for signup info dict
+                if(phoneEmailSegCtrl.selectedSegmentIndex == 0) { //user is entering phone number
+                    signupInfo[Constants.PHONE_NUMBER] = phoneEmailTextField.text
+                    self.signupInfo[Constants.USERNAME] = ""
+                    
+                    // if user choose phone, send to username VC
+                    let usernameVC = storyBoard.instantiateViewController(withIdentifier: "UsernameVC") as! UsernameVC
+                    usernameVC.signupInfo = signupInfo
+                    self.present(usernameVC, animated:true, completion:nil)
+                    
+                } else if(phoneEmailSegCtrl.selectedSegmentIndex == 1) { //user is entering
+                    signupInfo["email"] = phoneEmailTextField.text
+                    let usernameComponents = phoneEmailTextField.text!.components(separatedBy: "@")
+                    self.signupInfo[Constants.USERNAME] = usernameComponents[0]
+                    
+                    // if user chooses email, send to add name VC
+                    let fullNameVC = storyBoard.instantiateViewController(withIdentifier: "FullNameVC") as! FullNameVC
+                    fullNameVC.signupInfo = signupInfo
+                    self.present(fullNameVC, animated:true, completion:nil)
+                }
+                
+            }
         }
+        
     }
     
     
@@ -99,6 +124,8 @@ class PhoneEmailSignupVC: UIViewController {
             
             do {
                 try phoneEmailTextField.validatedText(validationType: ValidatorType.phoneNumber)
+                
+                // return UserService.checkPhoneEmailAvailability(isPhone: true, inputText: phoneEmailTextField.text!)
             } catch( _) {
                 return false
             }
@@ -106,6 +133,7 @@ class PhoneEmailSignupVC: UIViewController {
         } else if(phoneEmailSegCtrl.selectedSegmentIndex == 1) { //user is entering
             do {
                 try phoneEmailTextField.validatedText(validationType: ValidatorType.email)
+                //return UserService.checkPhoneEmailAvailability(isPhone: false, inputText: phoneEmailTextField.text!)
             } catch( _) {
                 return false
             }
@@ -115,9 +143,4 @@ class PhoneEmailSignupVC: UIViewController {
     }
     
     
-    
-    
-
-    
-
 }
