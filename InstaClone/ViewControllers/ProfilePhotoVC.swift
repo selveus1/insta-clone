@@ -69,7 +69,11 @@ class ProfilePhotoVC: BaseImageViewController {
             self.image = (img as! UIImage)
             
             //add photo to user
-            UserService.addProfilePictureToUser(signupInfo: signupInfo, profilePic: image)
+            let didAddPhoto = UserService.addProfilePictureToUser(signupInfo: signupInfo, profilePic: image)
+            
+            if !didAddPhoto {
+                print("ERROR - could not add photo to user")
+            }
             
             self.profileImg.image = img as? UIImage
             

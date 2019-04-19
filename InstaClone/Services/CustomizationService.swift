@@ -94,7 +94,7 @@ class CustomizationService {
     static func customizeFacebookLabel(label: UILabel){
 
         let fbLogo: UIImage = UIImage(named: "FacebookLogoWhite")!
-        var bgImg = UIImageView(image: fbLogo)
+        let bgImg = UIImageView(image: fbLogo)
         bgImg.frame = CGRect(x: 0, y: 0, width: label.frame.height, height: label.frame.height)
 
         label.addSubview(bgImg)

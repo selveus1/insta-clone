@@ -32,6 +32,7 @@ class UserService {
             try newUser.signUp()
             createdUser = true
         } catch(let error) {
+            print(error)
             createdUser = false
         }
 
@@ -64,6 +65,7 @@ class UserService {
                     do {
                         try user.save()
                     } catch(let error) {
+                        print(error)
                         return false
                     }
                     
@@ -72,6 +74,7 @@ class UserService {
                 
             }
         } catch(let error) {
+            print(error)
             return false
         }
 
@@ -114,7 +117,6 @@ class UserService {
         
         do {
             let users = try query?.findObjects()
-            print("user count with phone/email = \(users?.count)")
             if users?.count != 0 {
                 print("found user with \(signupType)")
                 return false
@@ -151,7 +153,7 @@ class UserService {
     static func addProfilePictureToUser(signupInfo: [String:String], profilePic: UIImage) -> Bool {
         
         //find user
-        var user = self.getUserByUsername(username: signupInfo[Constants.USERNAME]!) as! PFUser
+        let user = self.getUserByUsername(username: signupInfo[Constants.USERNAME]!) as! PFUser
 
         if let imageData = profilePic.pngData() {
             //add image field to user
@@ -159,15 +161,6 @@ class UserService {
 
             user.saveInBackground()
             return true
-            
-//            do {
-//                //try user.save()
-//                user.saveInBackground()
-//                print("success")
-//            } catch(let error) {
-//                print(error)
-//                return false
-//            }
 
         }
 
