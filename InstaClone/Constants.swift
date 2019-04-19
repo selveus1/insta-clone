@@ -30,7 +30,7 @@ struct Constants {
     static var BORDER_RAD: CGFloat = 3.0
     static var BORDER_WID: CGFloat = 1.1
     static var FIELD_HEIGHT: CGFloat = 40.0
-//    static var FIELD_PADDING: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: FIELD_HEIGHT))
+
     
     
     // MARK: - Common Fields
@@ -40,6 +40,12 @@ struct Constants {
     static let PHONE_NUMBER = "phoneNumber"
     static let FULL_NAME = "fullName"
     static let PROFILE_PICTURE = "profilePicture"
+    
+    // MARK: - Core Data Entities & Fields
+    static let USER_ENTITY_NAME = "User"
+    static let USER_ENTITY_UNAME = "username"
+    static let USER_ENTITY_PWORD = "password"
+    static let USER_ENTITY_SAVELOG = "saveLogin"
     
     
     

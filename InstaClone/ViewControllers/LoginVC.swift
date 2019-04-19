@@ -17,8 +17,8 @@ class LoginVC: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var getHelpLabel: UILabel!
-    @IBOutlet var loginWithFBLabel: UILabel!
     @IBOutlet var switchPerspectiveButton: UIButton!
+    @IBOutlet var fbSignupButton: UIButton!
     
     
     
@@ -39,7 +39,7 @@ class LoginVC: UIViewController {
         CustomizationService.customizeTextField(textField: passwordTextField)
         CustomizationService.customizePlaceholderText(textField: passwordTextField, placeholderText: "Password")
         CustomizationService.customizeButtons(button: loginButton)
-        CustomizationService.customizeFacebookLabel(label: loginWithFBLabel )
+       
 
     }
     
@@ -47,7 +47,7 @@ class LoginVC: UIViewController {
     func createLangDropDown(){
         languageDropDown.optionArray = ["English", "Spanish", "French"]
         
-        // The the Closure returns Selected Index and String
+        // The Closure returns Selected Index and String
         languageDropDown.didSelect{(selectedText , index ,id) in
             print( "Selected String: \(selectedText) \n index: \(index)")
         }

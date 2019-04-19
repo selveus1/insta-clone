@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Mv-NS-HST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gaA-Qv-ZgA">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -286,6 +286,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Iux-Tr-6hX"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-25" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="15" minY="5" maxX="0.0" maxY="5"/>
@@ -886,23 +887,6 @@
                                     <constraint firstAttribute="height" constant="1" id="Bvt-9P-ahZ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYg-ea-lbU">
-                                <rect key="frame" x="132" y="626" width="150" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="J12-65-rOS"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="          Login with Facebook">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-Zk-WPB">
                                 <rect key="frame" x="0.0" y="691" width="414" height="45"/>
                                 <color key="backgroundColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="0.24583013803680981" colorSpace="calibratedRGB"/>
@@ -1006,6 +990,20 @@
                                     <constraint firstItem="hsm-fk-EIW" firstAttribute="top" secondItem="PGO-AC-dFO" secondAttribute="bottom" id="sZJ-4P-wri"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12W-zQ-Tsg">
+                                <rect key="frame" x="45" y="621" width="324" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cie-HG-gNW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-25" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="15" minY="5" maxX="0.0" maxY="5"/>
+                                <state key="normal" title="Sign Up With Facebook" image="fb-white-icon">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52482800070000002" green="0.1414414416" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -1017,20 +1015,21 @@
                             <constraint firstItem="rTc-et-QbJ" firstAttribute="leading" secondItem="8WZ-nx-WH7" secondAttribute="leading" constant="35" id="5lu-eJ-FeQ"/>
                             <constraint firstAttribute="trailing" secondItem="PUr-UQ-btg" secondAttribute="trailing" constant="35" id="Bil-Wq-y4B"/>
                             <constraint firstItem="Uk9-Jk-Zcg" firstAttribute="centerX" secondItem="8WZ-nx-WH7" secondAttribute="centerX" id="Ddm-CG-eSo"/>
-                            <constraint firstItem="dYg-ea-lbU" firstAttribute="centerX" secondItem="8WZ-nx-WH7" secondAttribute="centerX" id="JUd-X3-fPw"/>
                             <constraint firstItem="whm-aA-RBQ" firstAttribute="top" secondItem="PTM-Ui-oQh" secondAttribute="bottom" constant="40" id="LkN-aC-g3V"/>
                             <constraint firstItem="TCL-1I-hbY" firstAttribute="top" secondItem="Y1u-Zk-WPB" secondAttribute="bottom" id="OYT-Rq-eRi"/>
                             <constraint firstItem="PUr-UQ-btg" firstAttribute="leading" secondItem="13y-aS-iBR" secondAttribute="trailing" constant="5" id="Q9d-d3-Re4"/>
-                            <constraint firstItem="dYg-ea-lbU" firstAttribute="top" secondItem="13y-aS-iBR" secondAttribute="bottom" constant="8" symbolic="YES" id="QKP-jk-SJy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="12W-zQ-Tsg" secondAttribute="trailing" constant="25" id="S6R-dG-icg"/>
                             <constraint firstItem="Y1u-Zk-WPB" firstAttribute="leading" secondItem="8WZ-nx-WH7" secondAttribute="leading" id="TQ4-WU-hD5"/>
                             <constraint firstItem="13y-aS-iBR" firstAttribute="top" secondItem="Uk9-Jk-Zcg" secondAttribute="bottom" constant="10" id="TQq-g1-yQx"/>
                             <constraint firstItem="rTc-et-QbJ" firstAttribute="centerY" secondItem="13y-aS-iBR" secondAttribute="centerY" id="ZKV-vO-tA2"/>
                             <constraint firstItem="Uk9-Jk-Zcg" firstAttribute="top" secondItem="AXl-92-Z4i" secondAttribute="bottom" constant="8" id="cK7-lw-rXs"/>
+                            <constraint firstItem="Y1u-Zk-WPB" firstAttribute="top" secondItem="12W-zQ-Tsg" secondAttribute="bottom" constant="30" id="gCX-NX-9c5"/>
                             <constraint firstItem="PUr-UQ-btg" firstAttribute="centerY" secondItem="13y-aS-iBR" secondAttribute="centerY" id="ghw-rT-FZ6"/>
                             <constraint firstItem="13y-aS-iBR" firstAttribute="leading" secondItem="rTc-et-QbJ" secondAttribute="trailing" constant="5" id="iQ5-fo-5bq"/>
                             <constraint firstAttribute="trailing" secondItem="Uk9-Jk-Zcg" secondAttribute="trailing" constant="50" id="jKU-4A-7YG"/>
-                            <constraint firstItem="Y1u-Zk-WPB" firstAttribute="top" secondItem="dYg-ea-lbU" secondAttribute="bottom" constant="35" id="jkb-RX-P9p"/>
+                            <constraint firstItem="12W-zQ-Tsg" firstAttribute="leading" secondItem="8WZ-nx-WH7" secondAttribute="leadingMargin" constant="25" id="l2J-Ab-0ot"/>
                             <constraint firstItem="13y-aS-iBR" firstAttribute="centerX" secondItem="8WZ-nx-WH7" secondAttribute="centerX" id="mD1-Y9-YEK"/>
+                            <constraint firstItem="12W-zQ-Tsg" firstAttribute="top" secondItem="13y-aS-iBR" secondAttribute="bottom" constant="3" id="o8a-2B-3DQ"/>
                             <constraint firstAttribute="trailing" secondItem="Y1u-Zk-WPB" secondAttribute="trailing" id="uXm-uy-muW"/>
                             <constraint firstItem="AXl-92-Z4i" firstAttribute="top" secondItem="whm-aA-RBQ" secondAttribute="bottom" constant="40" id="yQB-Pf-8Zs"/>
                             <constraint firstItem="Uk9-Jk-Zcg" firstAttribute="leading" secondItem="8WZ-nx-WH7" secondAttribute="leading" constant="50" id="yrD-TZ-Z9P"/>
@@ -1051,10 +1050,10 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="fbSignupButton" destination="12W-zQ-Tsg" id="Isu-pB-soM"/>
                         <outlet property="getHelpLabel" destination="PGO-AC-dFO" id="jWN-Rh-BSK"/>
                         <outlet property="languageDropDown" destination="whm-aA-RBQ" id="JL6-jX-kAX"/>
                         <outlet property="loginButton" destination="jvD-b6-cny" id="37z-ry-8cp"/>
-                        <outlet property="loginWithFBLabel" destination="dYg-ea-lbU" id="rYJ-Wz-MKV"/>
                         <outlet property="passwordTextField" destination="Jez-qL-FJJ" id="ccV-lI-n4T"/>
                         <outlet property="switchPerspectiveButton" destination="Y1u-Zk-WPB" id="cEB-TC-9yl"/>
                         <outlet property="usernameTextField" destination="HdE-Rk-iiI" id="Bb2-as-eLR"/>
@@ -1216,6 +1215,24 @@
             </objects>
             <point key="canvasLocation" x="4794" y="108"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="DNR-EL-blz">
+            <objects>
+                <viewController id="Wyn-2s-KQf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Qi-oS-uT4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZS0-ms-r7l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1T-TK-uXl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mq-fu-bQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5674" y="112"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddPhoto" width="266.66665649414062" height="266.66665649414062"/>
@@ -1224,6 +1241,6 @@
         <image name="fb-white-icon" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZEX-hW-9vi"/>
+        <segue reference="973-XS-45d"/>
     </inferredMetricsTieBreakers>
 </document>
