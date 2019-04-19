@@ -58,13 +58,21 @@ class ProfilePhotoVC: BaseImageViewController {
         
     }
     
+
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         imagePicker.dismiss(animated: true, completion: nil) //this dismisses the retake / use photo menu
         if let img = info[.originalImage] {
 
             self.image = (img as! UIImage)
+            
+            //add photo to user
+            UserService.addProfilePictureToUser(signupInfo: signupInfo, profilePic: image)
+            
             self.profileImg.image = img as? UIImage
+            
             self.skipButton.setTitle("Next", for: .normal)
         }
         

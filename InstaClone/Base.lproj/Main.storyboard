@@ -1161,7 +1161,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="confirmActionButtonTapped:" destination="e6f-Rv-i6G" eventType="touchUpInside" id="lWb-e5-RR1"/>
+                                    <action selector="saveButtonTapped:" destination="e6f-Rv-i6G" eventType="touchUpInside" id="OnK-oT-hZ5"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SaveLogin" translatesAutoresizingMaskIntoConstraints="NO" id="d73-Wj-pOK">
@@ -1178,7 +1178,7 @@
                                 </constraints>
                                 <state key="normal" title="Skip"/>
                                 <connections>
-                                    <action selector="skipButtonTapped:" destination="e6f-Rv-i6G" eventType="touchUpInside" id="7y2-8q-ikD"/>
+                                    <action selector="skipButtonTapped:" destination="e6f-Rv-i6G" eventType="touchUpInside" id="PRx-G4-1dk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Save Login Info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pz1-x1-MyZ">
@@ -1211,12 +1211,6 @@
                             <constraint firstItem="2Bg-Fh-V9r" firstAttribute="top" secondItem="9r4-Ag-tan" secondAttribute="bottom" constant="15" id="s1y-15-cBg"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="configImageView" destination="d73-Wj-pOK" id="Mjo-f8-dyH"/>
-                        <outlet property="configInstructionsLabel" destination="7OH-ey-ChQ" id="qiG-gZ-aL0"/>
-                        <outlet property="configLabel" destination="Pz1-x1-MyZ" id="ILg-78-vLr"/>
-                        <outlet property="confirmActionButton" destination="9r4-Ag-tan" id="2Eh-iu-ZZ7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DxU-ZW-kq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1230,6 +1224,6 @@
         <image name="fb-white-icon" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="973-XS-45d"/>
+        <segue reference="ZEX-hW-9vi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,7 +32,7 @@ class UsernameVC: UIViewController {
         //if coming from WelcomeVC, no need to validate
         if signupInfo[Constants.USERNAME] != "" {
             
-            if !UserService.checkUsernameAvailability(username: usernameTextField.text!) {
+            if !UserService.isUsernameAvailable(username: usernameTextField.text!) {
                 AlertService.showAlertWithOkay(alertTitle: "Username Already Exists", alertMsg: "That username has already been taken. Please choose another.")
             } else {
                 
@@ -95,7 +95,7 @@ class UsernameVC: UIViewController {
                 try usernameTextField.validatedText(validationType: ValidatorType.username)
                 
                 // username has been taken
-                if !UserService.checkUsernameAvailability(username: usernameTextField.text!) {
+                if !UserService.isUsernameAvailable(username: usernameTextField.text!) {
                     AlertService.showAlertWithOkay(alertTitle: "Username Already Exists", alertMsg: "That username has already been taken. Please choose another.")
                     return false
                 }

@@ -38,6 +38,9 @@ class WelcomeVC: UIViewController {
         if(didCreateUser) { //successfully created user
             print("sign up success")
             self.welcomeLabel.text = "Welcome to Instagram, \(signupInfo[Constants.USERNAME] ?? "")!"
+            
+            
+            
         } else {
             AlertService.showAlertWithOkay(alertTitle: "Error", alertMsg: "Error in creating new user. Please try Again")
             

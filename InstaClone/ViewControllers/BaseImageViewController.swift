@@ -22,27 +22,5 @@ class BaseImageViewController: UIViewController, UIImagePickerControllerDelegate
         imagePicker = UIImagePickerController()
     }
     
-    /*
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        print("doing stuff after taking pic")
-        imagePicker.dismiss(animated: true, completion: nil) //this dismisses the retake / use photo menu
-        if let img = info[.originalImage] {
-            
-            print("int img = info")
-            self.image = (img as! UIImage)
-            
-            let alert = AlertService.sendImageAlertWithOkay(alertTitle: "Profile Picture Chose", alertMsg: "", image: img as! UIImage)
-            
-            UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
-            
-        } else {
-            print("somethingi happeing with info")
-        }
-        
-        
-        print("end")
-    }
- */
 
 }

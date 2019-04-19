@@ -67,56 +67,19 @@ class UserService {
                         return false
                     }
                     
-//                    user.saveInBackground(block: { (isSuccess, error) in
-//                        if error != nil {
-//                            print(error)
-//                            modUser = false
-//                        } else {
-//                            modUser = isSuccess
-//                        }
-//                    })
+
                 }
                 
             }
         } catch(let error) {
             return false
         }
-        
-        
-//        query?.findObjectsInBackground(block: { (objects, error) in
-//            if error != nil {
-//                print(error!)
-//                // although unknown error, give false just to be safe
-//                modUser = false
-//            }
-//            else {
-//                if let users = objects {
-//
-//                    // there should only be one
-//                    for user in users {
-//                        for(key, value) in modInfo {
-//                            user[key] = value
-//                        }
-//
-//                        // save modifications
-//                        user.saveInBackground(block: { (isSuccess, error) in
-//                            if error != nil {
-//                                print(error)
-//                                modUser = false
-//                            } else {
-//                                modUser = isSuccess
-//                            }
-//                        })
-//                    }
-//
-//                }
-//            }
-//        })
+
     
         return true
     }
     
-    static func checkUsernameAvailability(username: String) -> Bool {
+    static func isUsernameAvailable(username: String) -> Bool {
         
         let query = PFUser.query()
         query?.whereKey(Constants.USERNAME, equalTo: username)
@@ -135,28 +98,79 @@ class UserService {
         
     }
     
-    static func checkPhoneEmailAvailability(isPhone: Bool, inputText: String) -> Bool {
+    static func isPhoneEmailAvailable(isPhone: Bool, inputText: String) -> Bool {
         let query = PFUser.query()
         var signupType = ""
         
         if(isPhone) {
             signupType = Constants.PHONE_NUMBER
+            print("signup is phone")
         } else {
             signupType = Constants.EMAIL
+            print("signup is email")
         }
         
         query?.whereKey(signupType, equalTo: inputText)
         
         do {
             let users = try query?.findObjects()
-            
+            print("user count with phone/email = \(users?.count)")
             if users?.count != 0 {
+                print("found user with \(signupType)")
                 return false
             }
         } catch(let error) {
+            print("ERROR - \(error.localizedDescription)")
             return false
         }
 
         return true
+    }
+    
+    static func getUserByUsername(username: String) -> PFObject {
+        
+        var user: PFObject? = nil
+        let query = PFUser.query()
+        
+        query?.whereKey(Constants.USERNAME, equalTo: username)
+        
+        do {
+            let foundUser = try query?.findObjects()
+            
+            if foundUser?.count != 0 {
+                user = foundUser![0]
+            }
+        } catch(let error) {
+            print(error)
+        }
+        
+        return user!
+    }
+    
+    
+    static func addProfilePictureToUser(signupInfo: [String:String], profilePic: UIImage) -> Bool {
+        
+        //find user
+        var user = self.getUserByUsername(username: signupInfo[Constants.USERNAME]!) as! PFUser
+
+        if let imageData = profilePic.pngData() {
+            //add image field to user
+            user[Constants.PROFILE_PICTURE] = PFFileObject(name: "image.png", data: imageData)
+
+            user.saveInBackground()
+            return true
+            
+//            do {
+//                //try user.save()
+//                user.saveInBackground()
+//                print("success")
+//            } catch(let error) {
+//                print(error)
+//                return false
+//            }
+
+        }
+
+        return false
     }
 }

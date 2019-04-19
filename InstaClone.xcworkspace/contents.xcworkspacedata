@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ImageService.swift">
-   </FileRef>
-   <FileRef
       location = "group:InstaClone.xcodeproj">
    </FileRef>
    <FileRef

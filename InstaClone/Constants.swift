@@ -39,6 +39,7 @@ struct Constants {
     static let EMAIL = "email"
     static let PHONE_NUMBER = "phoneNumber"
     static let FULL_NAME = "fullName"
+    static let PROFILE_PICTURE = "profilePicture"
     
     
     

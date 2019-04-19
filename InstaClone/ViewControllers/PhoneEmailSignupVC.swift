@@ -78,7 +78,7 @@ class PhoneEmailSignupVC: UIViewController {
                 errorTitle = "Email"
             }
             
-            if !UserService.checkPhoneEmailAvailability(isPhone: isPhone, inputText: phoneEmailTextField.text!) {
+            if UserService.isPhoneEmailAvailable(isPhone: isPhone, inputText: phoneEmailTextField.text!) == false {
                 
                 AlertService.showAlertWithOkay(alertTitle: errorTitle + " Already In Use", alertMsg: errorTitle + " is already assigned to an account.")
             }
