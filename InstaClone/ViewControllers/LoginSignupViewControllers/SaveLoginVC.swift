@@ -16,14 +16,36 @@ class SaveLoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         print("savelogin vc")
 
     }
     
     
+//    @IBAction func saveButtonTapped(_ sender: Any) {
+//        saveContext(saveLogin: true)
+//        headToHomeVC()
+//    }
+//
+//
+//
+//    @IBAction func skipButtonTapped(_ sender: Any) {
+//        saveContext(saveLogin: false)
+//        headToHomeVC()
+//
+//    }
+    
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+        saveContext(saveLogin: true)
+        headToHomeVC()
+    }
+    
+    @IBAction func skipButtonTapped(_ sender: Any) {
+        saveContext(saveLogin: false)
+        headToHomeVC()
+    }
+    
+    func saveContext(saveLogin: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // Use the context variable to access core data
@@ -32,7 +54,6 @@ class SaveLoginVC: UIViewController {
         // Set all user info
         let newUser = NSEntityDescription.insertNewObject(forEntityName: Constants.USER_ENTITY_NAME, into: context)
         newUser.setValue(signupInfo[Constants.USERNAME], forKey: Constants.USER_ENTITY_UNAME)
-        newUser.setValue(signupInfo[Constants.PASSWORD], forKey: Constants.USER_ENTITY_PWORD)
         newUser.setValue(true, forKey: Constants.USER_ENTITY_SAVELOG)
         
         do {
@@ -42,11 +63,11 @@ class SaveLoginVC: UIViewController {
         } catch {
             print("There was an error...")
         }
-        
     }
     
-    @IBAction func skipButtonTapped(_ sender: Any) {
-        
-        
+    func headToHomeVC(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        self.present(homeVC, animated:true, completion:nil)
     }
 }

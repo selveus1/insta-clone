@@ -15,6 +15,7 @@
 		AC68E6A4226226CB001D1388 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68E6A3226226CB001D1388 /* ImageService.swift */; };
 		AC68E6A622622AFE001D1388 /* SaveLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68E6A522622AFE001D1388 /* SaveLoginVC.swift */; };
 		AC68E6A822622F28001D1388 /* BaseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68E6A722622F28001D1388 /* BaseImageViewController.swift */; };
+		AC6B37B5226A752200EF8779 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B37B4226A752200EF8779 /* HomeVC.swift */; };
 		AC8FBCF7223B0428008345F8 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBCF6223B0428008345F8 /* AlertService.swift */; };
 		AC8FBCF9223B0811008345F8 /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBCF8223B0811008345F8 /* ValidatorService.swift */; };
 		AC8FBCFC223B0E12008345F8 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBCFB223B0E12008345F8 /* UITextFieldExtensions.swift */; };
@@ -32,7 +33,6 @@
 		ACDD54D8224D638900075D12 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D7224D638900075D12 /* WelcomeVC.swift */; };
 		ACDD54DA224D63F000075D12 /* ProfilePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD54D9224D63F000075D12 /* ProfilePhotoVC.swift */; };
 		ACE0B17D2227588E007CFAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17C2227588E007CFAC6 /* AppDelegate.swift */; };
-		ACE0B17F2227588E007CFAC6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */; };
 		ACE0B1822227588E007CFAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE0B1802227588E007CFAC6 /* Main.storyboard */; };
 		ACE0B1852227588E007CFAC6 /* InstaClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACE0B1832227588E007CFAC6 /* InstaClone.xcdatamodeld */; };
 		ACE0B1872227588F007CFAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE0B1862227588F007CFAC6 /* Assets.xcassets */; };
@@ -49,6 +49,7 @@
 		AC68E6A3226226CB001D1388 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		AC68E6A522622AFE001D1388 /* SaveLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoginVC.swift; sourceTree = "<group>"; };
 		AC68E6A722622F28001D1388 /* BaseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageViewController.swift; sourceTree = "<group>"; };
+		AC6B37B4226A752200EF8779 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		AC8FBCF6223B0428008345F8 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		AC8FBCF8223B0811008345F8 /* ValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		AC8FBCFB223B0E12008345F8 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		ACDD54D9224D63F000075D12 /* ProfilePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoVC.swift; sourceTree = "<group>"; };
 		ACE0B1792227588E007CFAC6 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE0B17C2227588E007CFAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		ACE0B1812227588E007CFAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACE0B1842227588E007CFAC6 /* InstaClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaClone.xcdatamodel; sourceTree = "<group>"; };
 		ACE0B1862227588F007CFAC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +125,30 @@
 			path = "Custom UI Elements";
 			sourceTree = "<group>";
 		};
+		AC6B37B2226A74B400EF8779 /* BaseViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC68E6A722622F28001D1388 /* BaseImageViewController.swift */,
+			);
+			path = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		AC6B37B3226A74C700EF8779 /* LoginSignupViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC5B60642228D4B300C2AFD5 /* LoginVC.swift */,
+				ACDD54D1224D618C00075D12 /* SignupStartVC.swift */,
+				ACDD54D3224D622500075D12 /* PhoneEmailSignupVC.swift */,
+				AC94F5DE224EDB9900ED3DF9 /* UsernameVC.swift */,
+				ACDD54D5224D631F00075D12 /* FullNameVC.swift */,
+				AC94F5DC224ED96D00ED3DF9 /* CreatePasswordVC.swift */,
+				ACDD54D7224D638900075D12 /* WelcomeVC.swift */,
+				ACDD54D9224D63F000075D12 /* ProfilePhotoVC.swift */,
+				AC68E6A522622AFE001D1388 /* SaveLoginVC.swift */,
+			);
+			path = LoginSignupViewControllers;
+			sourceTree = "<group>";
+		};
 		AC8FBCFA223B0DD8008345F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,17 +186,9 @@
 		ACD7B59D222881F6009D1829 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ACE0B17E2227588E007CFAC6 /* SignupViewController.swift */,
-				AC5B60642228D4B300C2AFD5 /* LoginVC.swift */,
-				ACDD54D1224D618C00075D12 /* SignupStartVC.swift */,
-				ACDD54D3224D622500075D12 /* PhoneEmailSignupVC.swift */,
-				AC94F5DE224EDB9900ED3DF9 /* UsernameVC.swift */,
-				ACDD54D5224D631F00075D12 /* FullNameVC.swift */,
-				AC94F5DC224ED96D00ED3DF9 /* CreatePasswordVC.swift */,
-				ACDD54D7224D638900075D12 /* WelcomeVC.swift */,
-				ACDD54D9224D63F000075D12 /* ProfilePhotoVC.swift */,
-				AC68E6A522622AFE001D1388 /* SaveLoginVC.swift */,
-				AC68E6A722622F28001D1388 /* BaseImageViewController.swift */,
+				AC6B37B2226A74B400EF8779 /* BaseViewControllers */,
+				AC6B37B3226A74C700EF8779 /* LoginSignupViewControllers */,
+				AC6B37B4226A752200EF8779 /* HomeVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +266,7 @@
 				TargetAttributes = {
 					ACE0B1782227588E007CFAC6 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -347,10 +364,10 @@
 				AC94F5DF224EDB9900ED3DF9 /* UsernameVC.swift in Sources */,
 				AC68E6A822622F28001D1388 /* BaseImageViewController.swift in Sources */,
 				ACE0B1852227588E007CFAC6 /* InstaClone.xcdatamodeld in Sources */,
+				AC6B37B5226A752200EF8779 /* HomeVC.swift in Sources */,
 				AC94F5E2224EE29900ED3DF9 /* User.swift in Sources */,
 				AC9464D3222877BB0008133E /* ConfigVars.stencil in Sources */,
 				ACDD54D8224D638900075D12 /* WelcomeVC.swift in Sources */,
-				ACE0B17F2227588E007CFAC6 /* SignupViewController.swift in Sources */,
 				ACDD54D4224D622500075D12 /* PhoneEmailSignupVC.swift in Sources */,
 				AC5B60672228D7D400C2AFD5 /* Constants.swift in Sources */,
 				AC5B60652228D4B300C2AFD5 /* LoginVC.swift in Sources */,
@@ -518,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheenaelveus.InstaClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -538,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheenaelveus.InstaClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

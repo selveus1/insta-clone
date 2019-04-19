@@ -44,7 +44,6 @@ struct Constants {
     // MARK: - Core Data Entities & Fields
     static let USER_ENTITY_NAME = "User"
     static let USER_ENTITY_UNAME = "username"
-    static let USER_ENTITY_PWORD = "password"
     static let USER_ENTITY_SAVELOG = "saveLogin"
     
     

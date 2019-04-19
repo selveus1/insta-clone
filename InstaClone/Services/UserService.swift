@@ -141,6 +141,8 @@ class UserService {
             
             if foundUser?.count != 0 {
                 user = foundUser![0]
+            } else {
+                print("cannot find user")
             }
         } catch(let error) {
             print(error)
@@ -153,10 +155,14 @@ class UserService {
     static func addProfilePictureToUser(signupInfo: [String:String], profilePic: UIImage) -> Bool {
         
         //find user
+        
+        print("\(signupInfo[Constants.USERNAME])")
+        
         let user = self.getUserByUsername(username: signupInfo[Constants.USERNAME]!) as! PFUser
 
-        if let imageData = profilePic.pngData() {
-            //add image field to user
+        if let imageData = profilePic.jpegData(compressionQuality: 0.70) {
+
+            // Add image field to user
             user[Constants.PROFILE_PICTURE] = PFFileObject(name: "image.png", data: imageData)
 
             user.saveInBackground()

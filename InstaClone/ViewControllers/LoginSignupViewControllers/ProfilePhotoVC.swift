@@ -11,15 +11,23 @@ import UIKit
 class ProfilePhotoVC: BaseImageViewController {
 
     var signupInfo: [String:String] = [:]
-
     @IBOutlet var addProfilePhotoButton: UIButton!
     @IBOutlet var profileImg: UIImageView!
-    @IBOutlet var skipButton: UIButton!
+    
+    @IBOutlet var skipNextButton: UIButton!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("in photo vc")
+        if(signupInfo.count > 0) {
+            for (kind, value) in signupInfo {
+                print("kind: \(kind), value: \(value)")
+                
+            }
+        }
         
     }
 
@@ -66,10 +74,12 @@ class ProfilePhotoVC: BaseImageViewController {
         imagePicker.dismiss(animated: true, completion: nil) //this dismisses the retake / use photo menu
         if let img = info[.originalImage] {
 
+            print("found img")
             self.image = (img as! UIImage)
             
+            
             //add photo to user
-            let didAddPhoto = UserService.addProfilePictureToUser(signupInfo: signupInfo, profilePic: image)
+            let didAddPhoto = UserService.addProfilePictureToUser(signupInfo: signupInfo, profilePic: self.image)
             
             if !didAddPhoto {
                 print("ERROR - could not add photo to user")
@@ -77,7 +87,7 @@ class ProfilePhotoVC: BaseImageViewController {
             
             self.profileImg.image = img as? UIImage
             
-            self.skipButton.setTitle("Next", for: .normal)
+            self.skipNextButton.setTitle("Next", for: .normal)
         }
         
         

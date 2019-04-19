@@ -27,6 +27,13 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("in welcome vc")
+        if(signupInfo.count > 0) {
+            for (kind, value) in signupInfo {
+                print("kind: \(kind), value: \(value)")
+                
+            }
+        }
         createUser()
         
     }
@@ -38,8 +45,6 @@ class WelcomeVC: UIViewController {
         if(didCreateUser) { //successfully created user
             print("sign up success")
             self.welcomeLabel.text = "Welcome to Instagram, \(signupInfo[Constants.USERNAME] ?? "")!"
-            
-            
             
         } else {
             AlertService.showAlertWithOkay(alertTitle: "Error", alertMsg: "Error in creating new user. Please try Again")
@@ -53,7 +58,12 @@ class WelcomeVC: UIViewController {
     
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let profileVC = storyBoard.instantiateViewController(withIdentifier: "ProfilePhotoVC") as! ProfilePhotoVC
+        profileVC.signupInfo = signupInfo
+        self.present(profileVC, animated:true, completion:nil)
     }
+    
     
     
     @IBAction func changeUsernameButtonTapped(_ sender: Any) {

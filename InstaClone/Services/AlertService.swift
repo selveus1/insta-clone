@@ -18,6 +18,7 @@ class AlertService {
         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
+
     static func showImageAlertWithOkay(alertTitle: String, alertMsg: String, image: UIImage) -> Void {
         let alert = UIAlertController(title: alertTitle, message: alertMsg, preferredStyle: UIAlertController.Style.alert)
         
@@ -29,6 +30,8 @@ class AlertService {
         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
     }
     
+    
+
     
     static func sendImageAlertWithOkay(alertTitle: String, alertMsg: String, image: UIImage) -> UIAlertController {
 
