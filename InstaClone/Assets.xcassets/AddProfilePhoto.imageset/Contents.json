@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "iconfinder_Jee-62_2180770.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iconfinder_Jee-62_2180770 (1).png",
+      "filename" : "addPhoto.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iconfinder_Jee-62_2180770 (2).png",
+      "filename" : "addPhoto-1.png",
       "scale" : "3x"
     }
   ],

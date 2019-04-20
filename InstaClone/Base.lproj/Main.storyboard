@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gaA-Qv-ZgA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qlU-s3-mKa">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -479,7 +479,7 @@
                                     <action selector="addProfilePhotoButtonTapped:" destination="9Mv-NS-HST" eventType="touchUpInside" id="Yno-Il-nb5"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="RxO-BA-p0I">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="RxO-BA-p0I">
                                 <rect key="frame" x="57" y="218" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="68H-MC-DVp"/>
@@ -1035,16 +1035,126 @@
                             <constraint firstItem="aLs-Wq-S6H" firstAttribute="centerX" secondItem="I1T-TK-uXl" secondAttribute="centerX" id="pH2-Dy-sK4"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="HomeIconWhite" id="Zxf-gx-WO0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mq-fu-bQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-352" y="1397"/>
+            <point key="canvasLocation" x="543" y="1133"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Is2-zA-rJH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qlU-s3-mKa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="YCS-N0-09E">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Wyn-2s-KQf" kind="relationship" relationship="viewControllers" id="be5-fg-TKo"/>
+                        <segue destination="8WO-j7-EPw" kind="relationship" relationship="viewControllers" id="nD3-wC-WxH"/>
+                        <segue destination="hGz-q0-Zwp" kind="relationship" relationship="viewControllers" id="0p2-NO-fk0"/>
+                        <segue destination="Ytv-M4-bYf" kind="relationship" relationship="viewControllers" id="rk6-9a-a3g"/>
+                        <segue destination="tLu-U4-zRl" kind="relationship" relationship="viewControllers" id="FCm-zT-edl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sdV-My-EGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="2398"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fJn-7F-lrN">
+            <objects>
+                <viewController id="hGz-q0-Zwp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t88-hT-Dnb"/>
+                        <viewControllerLayoutGuide type="bottom" id="tl6-eH-tyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oGW-6k-eoQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="AddPhoto" id="gZ3-HQ-IdT">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZo-pQ-VqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="523" y="2498"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hHY-75-lHx">
+            <objects>
+                <viewController id="Ytv-M4-bYf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5n0-dx-7sZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDD-5E-Z8g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LjF-xc-AXb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="HeartClear" id="vQO-YL-p9p">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-12"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dc-I4-4mr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="522" y="3210"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1AE-6N-FpK">
+            <objects>
+                <viewController id="tLu-U4-zRl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="72e-94-oYa"/>
+                        <viewControllerLayoutGuide type="bottom" id="204-hk-eHE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aMr-Fc-AFY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="UserProfile" landscapeImage="UserProfile" selectedImage="UserProfileSelected" id="oox-fQ-66c">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yVb-PF-EcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="522" y="3911"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="rgs-zX-q6r">
+            <objects>
+                <viewController id="8WO-j7-EPw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2wg-md-OX0"/>
+                        <viewControllerLayoutGuide type="bottom" id="vVr-Rr-qin"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="goJ-CP-EWp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="SearchIcon" id="1aJ-Js-YYo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hP-tD-Isz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="1820"/>
         </scene>
     </scenes>
     <resources>
-        <image name="AddPhoto" width="266.66665649414062" height="266.66665649414062"/>
+        <image name="AddPhoto" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="AddProfilePhoto" width="266.66665649414062" height="266.66665649414062"/>
+        <image name="HeartClear" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="HomeIconWhite" width="85.333335876464844" height="85.333335876464844"/>
         <image name="InstagramWordLogoWhite" width="326" height="124.33333587646484"/>
         <image name="SaveLogin" width="266.66665649414062" height="266.66665649414062"/>
+        <image name="SearchIcon" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="UserProfile" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="UserProfileSelected" width="42.666667938232422" height="42.666667938232422"/>
         <image name="fb-white-icon" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
     <inferredMetricsTieBreakers>
