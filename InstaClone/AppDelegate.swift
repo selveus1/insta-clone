@@ -26,8 +26,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = configVars.server_url + configVars.parse_mount
         }
         Parse.initialize(with: configuration)
+    
+        checkForSavedLogin()
         return true
     }
+    
+    
+    func checkForSavedLogin() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.USER_ENTITY_NAME)
+        
+        do {
+            let users = try managedContext.fetch(fetchRequest)
+            
+            if users.count > 0 {
+                for user in users {
+                    if let username = user.value(forKey: Constants.USER_ENTITY_UNAME) as? String {
+                        
+                        // All fields are there so segue to home VC
+                        if let saveLogin = user.value(forKey: Constants.USER_ENTITY_SAVELOG) as? Bool  {
+                            
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            var rootVC : UIViewController? = nil
+                            if saveLogin {
+                                rootVC = storyBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                            } else {
+                                rootVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                            }
+                            window?.rootViewController = rootVC
+                            window?.makeKeyAndVisible()
+                            
+                        }
+                    }
+                }
+            } else {
+                print("couldn't find user info")
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error). \(error.userInfo)")
+        }
+        
+        
+        
+    }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -53,8 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -82,8 +130,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
 
+    
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

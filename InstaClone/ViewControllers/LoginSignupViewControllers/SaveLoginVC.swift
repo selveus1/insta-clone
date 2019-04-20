@@ -21,20 +21,6 @@ class SaveLoginVC: UIViewController {
     }
     
     
-//    @IBAction func saveButtonTapped(_ sender: Any) {
-//        saveContext(saveLogin: true)
-//        headToHomeVC()
-//    }
-//
-//
-//
-//    @IBAction func skipButtonTapped(_ sender: Any) {
-//        saveContext(saveLogin: false)
-//        headToHomeVC()
-//
-//    }
-    
-    
     @IBAction func saveButtonTapped(_ sender: Any) {
         saveContext(saveLogin: true)
         headToHomeVC()

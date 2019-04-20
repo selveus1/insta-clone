@@ -23,47 +23,12 @@ class LoginVC: UIViewController {
     var users : [NSManagedObject]! = nil
     var loggedInUser : NSManagedObject? = nil
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //check for existing user credentials
-        checkForSavedLogin()
-        
         setupLoginScreen()
         
-    }
-    
-    
-    func checkForSavedLogin() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.USER_ENTITY_NAME)
-        
-        do {
-            users = try managedContext.fetch(fetchRequest)
-            
-            if users.count > 0 {
-                for user in users {
-                    if let username = user.value(forKey: Constants.USER_ENTITY_UNAME) as? String {
-
-                        // All fields are there so segue to home VC
-                        if let saveLogin = user.value(forKey: Constants.USER_ENTITY_SAVELOG) as? Bool  {
-                            if saveLogin {
-                                print("auto segue to home")
-                            }
-                        }
-                    }
-                }
-            } else {
-                print("couldn't find user info")
-            }
-        } catch let error as NSError {
-            print("Could not fetch. \(error). \(error.userInfo)")
-        }
     }
     
 
@@ -105,6 +70,7 @@ class LoginVC: UIViewController {
  
     
     
+    // MARK: - Navigational
     @IBAction func loginButtonTapped(_ sender: Any) {
         if usernameTextField.text == "" || passwordTextField.text == "" {
             AlertService.showAlertWithOkay(alertTitle: "Incomplete Fields", alertMsg: "Please make sure all fields are entered!")
@@ -123,19 +89,16 @@ class LoginVC: UIViewController {
                         print("user is saving login")
                         self.saveLoginInfo(username: user![Constants.USERNAME]! as! String, saveLogin: true)
                          // perform segue
+                        self.headToHomeVC()
                     }))
 
                     alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (alert) in
                         print("user is not saving login")
                         self.saveLoginInfo(username: user![Constants.USERNAME]! as! String, saveLogin: false)
-                         // perform segue
-                        
+                        // perform segue
+                        self.headToHomeVC()
                     }))
                     self.present(alert, animated: true, completion: nil)
-                    
-                   
-        
-
                     
                     
                 } else{
@@ -177,4 +140,10 @@ class LoginVC: UIViewController {
         
     }
     
+    
+    func headToHomeVC(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        self.present(homeVC, animated:true, completion:nil)
+    }
 }
